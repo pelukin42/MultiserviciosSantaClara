@@ -13,7 +13,7 @@ description: Construye un sitio web completo "Plan Premium" (estilo Axelsites.co
 ## Entregables obligatorios (todo el plan Profesional + extras Premium)
 1. **Todo lo del Profesional**: hero con propuesta clara, servicios, proceso, FAQ, contacto, botones de WhatsApp/llamada, redes sociales, responsive, carga rápida.
 2. **Portafolio tipo catálogo** por tipo de proyecto, con filtros; slots para fotos reales (`assets/projects/01.jpg…`) con ilustración de respaldo + etiqueta "Foto de ejemplo" y lightbox.
-3. **Formulario de cotización detallado**: tipo de proyecto, zona, presupuesto (moneda local), plazo, detalles, nombre y teléfono. Valida y abre WhatsApp con el mensaje armado; alternativa `mailto:`.
+3. **Cotizador interactivo (carrito de cotización)**: 3 bloques (1 ¿Qué necesitas? con pestañas Servicios/Materiales, fichas seleccionables y lista editable con cantidad+unidad o medidas; 2 Tu proyecto: tipo, zona, presupuesto en moneda local, plazo, detalles; 3 Tus datos) + resumen lateral con vista previa del mensaje. Los botones "Agregar" de las tarjetas de servicios/productos alimentan la misma lista; botón flotante "Mi cotización" con contador. Valida (ítems o detalles, nombre, teléfono) y abre `wa.me` con el mensaje armado (negritas `*…*`, viñetas, nombres también en español si la UI está en inglés); alternativa `mailto:`. Sin precios inventados: solo mostrar totales si el cliente da una lista de precios.
 4. **Enlace directo a reseñas de Google** (configurable, con respaldo a Maps) + bloque de testimonios solo si hay reales.
 5. **SEO local**: title/description con servicio + zona, Open Graph (imagen **PNG** 1200×630), JSON-LD (`GeneralContractor`/`LocalBusiness`) con `areaServed`, `sitemap.xml`, `robots.txt`, mapa embebido y "Cómo llegar".
 6. **Bilingüe ES/EN**: el español es el HTML original (`data-i18n`, `data-i18n-html`, `data-i18n-ph`), el inglés un diccionario en JS; selector persistente en `localStorage`; traducir también `<title>`.
@@ -32,5 +32,5 @@ description: Construye un sitio web completo "Plan Premium" (estilo Axelsites.co
 ## QA antes de entregar (Playwright/Chromium, abrir con `file://`)
 - Sin errores de consola/`pageerror`; sin scroll horizontal a 390 px (`documentElement.scrollWidth <= innerWidth`).
 - Al hacer scroll programático usar `behavior:'instant'` (el `scroll-behavior:smooth` rompe los revelados).
-- Probar: filtros, cambio ES/EN, formulario vacío (error) y completo (URL `wa.me` correcta), chatbot (chips y texto libre), menú móvil.
+- Probar: filtros, cambio ES/EN, cotizador (agregar desde tarjetas y fichas, cantidades, error con datos faltantes, URL `wa.me` exacta, persistencia al recargar, vaciar), chatbot (chips y texto libre), menú móvil, `prefers-reduced-motion`.
 - Redes sin URL quedan ocultas.
