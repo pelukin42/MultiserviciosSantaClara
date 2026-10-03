@@ -268,14 +268,14 @@ blockquote cite{font-weight:700;font-style:normal}
 .tabs .ic{width:18px;height:18px}
 .tabs .cnt{font-style:normal;background:var(--red);color:#fff;font:700 .7rem var(--mono);padding:1px 7px;border-radius:99px;animation:pop .35s var(--spring)}
 
-.chips{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px}
+.chips{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
 .chip{position:relative;display:flex;align-items:center;gap:12px;text-align:left;padding:10px 12px;background:#fff;border:2px solid var(--ink);cursor:pointer;font:700 .95rem var(--body);color:var(--ink);transition:transform .2s var(--spring),background .25s,color .25s,box-shadow .25s;animation:fadeUp .45s var(--ease) backwards;animation-delay:calc(var(--i,0) * 40ms)}
 .chip:hover{transform:translateY(-3px);box-shadow:0 5px 0 var(--ink)}
 .chip:active{transform:scale(.97)}
 .chip .hex{width:44px;height:38px;background:var(--c2);color:var(--ink)}
 .chip .hex .ic{width:20px;height:20px}
 .chip:hover .hex{transform:none}
-.chip .t{flex:1;line-height:1.2}
+.chip .t{flex:1;min-width:0;line-height:1.2;overflow-wrap:anywhere}
 .chip .chk{width:24px;height:24px;border:2px solid var(--ink);display:grid;place-items:center;flex:none;transition:background .25s,border-color .25s}
 .chip .chk .ic{width:15px;height:15px;color:#fff;opacity:0;transform:scale(.3) rotate(-30deg);transition:transform .35s var(--spring),opacity .15s}
 .chip[aria-pressed=true]{background:var(--ink);color:#fff}
